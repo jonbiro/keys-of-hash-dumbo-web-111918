@@ -1,6 +1,12 @@
 require 'pry'
 class Hash
   def keys_of(*arguments)
-    binding.pry
+    keys = []
+    self.each do |k,v|
+      if arguments.include? v
+        keys << k
+      end
+    end
+    return keys
   end
 end
